@@ -1,0 +1,120 @@
+name: Release & Publish
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'package.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+  id-token: write
+
+jobs:
+  release:
+    name: Create Release & Publish Packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate & Build
+        run: |
+          pnpm run typecheck
+          pnpm run test
+          pnpm run build
+
+      - name: Check if Version Tag Exists
+        id: check_version
+        run: |
+          VERSION=$(node -p "JSON.parse(require('fs').readFileSync('package.json', 'utf8')).version")
+          TAG="v${VERSION}"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists locally."
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          elif git ls-remote --tags origin "$TAG" | grep -q "$TAG"; then
+            echo "Tag $TAG already exists on remote."
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Tag $TAG does not exist. Proceeding with release."
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Extract Release Notes from CHANGELOG
+        if: steps.check_version.outputs.exists == 'false'
+        id: release_notes
+        run: |
+          VERSION="${{ steps.check_version.outputs.version }}"
+          node -e "
+            const fs = require('fs');
+            const changelog = fs.readFileSync('CHANGELOG.md', 'utf8');
+            const header = '## [' + '$VERSION' + ']';
+            const start = changelog.indexOf(header);
+            let notes = '';
+            if (start !== -1) {
+              const afterHeader = changelog.slice(start);
+              const nextHeader = afterHeader.slice(header.length).search(/\n##\s+\[/);
+              notes = nextHeader !== -1 ? afterHeader.slice(0, header.length + nextHeader).trim() : afterHeader.trim();
+            } else {
+              notes = 'Release ' + '$VERSION';
+            }
+            fs.writeFileSync('RELEASE_NOTES.md', notes);
+          "
+
+      - name: Create Git Tag & Push
+        if: steps.check_version.outputs.exists == 'false'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -a "${{ steps.check_version.outputs.tag }}" -m "Release ${{ steps.check_version.outputs.tag }}"
+          git push origin "${{ steps.check_version.outputs.tag }}"
+
+      - name: Create GitHub Release
+        if: steps.check_version.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.check_version.outputs.tag }}
+          name: ${{ steps.check_version.outputs.tag }}
+          body_path: RELEASE_NOTES.md
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to npm Registry
+        if: steps.check_version.outputs.exists == 'false' && env.NPM_TOKEN != ''
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          pnpm publish --access public --no-git-checks
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish to GitHub Packages
+        if: steps.check_version.outputs.exists == 'false'
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
+          pnpm publish --registry=https://npm.pkg.github.com --no-git-checks || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
