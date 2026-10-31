@@ -23,8 +23,8 @@ export class WatterottShopAdapter extends BaseShopAdapter {
       defaultMethodId: 'dhl',
       pickupAvailable: true,
       pickupLocation: {
-        name: 'Watterott electronic Zentrale',
-        address: 'Herderstr. 10',
+        name: 'Watterott electronic GmbH',
+        address: 'Breitenhölzer Str. 6',
         city: 'Leinefelde-Worbis',
         postalCode: '37327',
         country: 'DE',
@@ -51,8 +51,8 @@ export class WatterottShopAdapter extends BaseShopAdapter {
           freeShippingThreshold: 0.0,
           deliveryDays: 'Bereit zur Abholung',
           pickupLocation: {
-            name: 'Watterott electronic Zentrale',
-            address: 'Herderstr. 10',
+            name: 'Watterott electronic GmbH',
+            address: 'Breitenhölzer Str. 6',
             city: 'Leinefelde-Worbis',
             postalCode: '37327',
             country: 'DE',

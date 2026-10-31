@@ -6,10 +6,10 @@ Model Context Protocol (MCP) server for electronic components. Search components
 
 | Store | Region | Standard Carrier | Base Cost | Free Shipping Threshold | Pickup Location |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **BerryBase** | `de` | DHL Paket | €4.95 | **€200.00** | Berlin (Gustav-Adolf-Str. 129, 13086 Berlin) |
-| **Roboter-Bausatz** | `de` | DHL Paket | €4.45 | **€99.00** | Bad Bentheim (Heinrich-Böll-Str. 6, 48455 Bad Bentheim) |
-| **Eckstein Komponente** | `de` | DHL Paket | €4.90 | **€79.00** | Clausthal-Zellerfeld (Am Galgensberg 18, 38678 Clausthal-Zellerfeld) |
-| **Watterott electronic** | `de` | DHL Paket | €4.50 | **€100.00** | Leinefelde-Worbis (Herderstr. 10, 37327 Leinefelde-Worbis) |
+| **BerryBase** | `de` | DHL Paket | €4.95 | **€200.00** | MakerSpace Berlin-Adlershof (Am Studio 20d, 12489 Berlin) |
+| **Roboter-Bausatz** | `de` | DHL Paket | €4.45 | **€99.00** | Lager Saarbrücken (Römerstadt 2-4, 66121 Saarbrücken) |
+| **Eckstein Komponente** | `de` | DHL Paket | €6.50 | **€200.00** | Clausthal-Zellerfeld (Am Ostbahnhof 3, 38678 Clausthal-Zellerfeld) |
+| **Watterott electronic** | `de` | DHL Paket | €4.50 | **€100.00** | Leinefelde-Worbis (Breitenhölzer Str. 6, 37327 Leinefelde-Worbis) |
 | **Antratek Deutschland** | `de` | DPD / PostNL | €7.08 gross | **€119.00** gross | Mail order dispatch |
 | **Botland** | `de` | GLS Kurier | €4.99 | **€100.00** | Mail order dispatch |
 | **AliExpress** | `global` | Choice / Standard | €2.99 fallback | **€10.00** (Choice bundle) | Standard home delivery |
@@ -17,7 +17,7 @@ Model Context Protocol (MCP) server for electronic components. Search components
 ## Features
 
 - **Local Pickup (Selbstabholung)**:
-  - Select pickup for stores with physical locations (BerryBase Berlin, Roboter-Bausatz Bad Bentheim, Eckstein Clausthal-Zellerfeld, Watterott Leinefelde-Worbis).
+  - Select pickup for stores with physical locations (BerryBase MakerSpace Berlin-Adlershof, Roboter-Bausatz Saarbrücken, Eckstein Clausthal-Zellerfeld, Watterott Leinefelde-Worbis).
   - Automatically zeros shipping fees (€0.00) and displays store address, opening hours, and pickup instructions.
 - **Alternative Shipping Methods**:
   - Choose between available carriers per shop: DHL Paket, UPS Standard, UPS Express Saver, DPD, GLS, Deutsche Post Warensendung, etc.

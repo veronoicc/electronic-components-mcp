@@ -298,7 +298,7 @@ describe('CartService Multi-Store Operations', () => {
     expect(updated.shipping.isPickup).toBe(true);
     expect(updated.shipping.cost).toBe(0.0);
     expect(updated.shipping.isFree).toBe(true);
-    expect(updated.shipping.pickupLocation?.name).toBe('BerryBase Store Berlin');
+    expect(updated.shipping.pickupLocation?.name).toBe('BerryBase MakerSpace Berlin-Adlershof');
     expect(updated.shipping.pickupLocation?.city).toBe('Berlin');
     expect(updated.total).toBe(3.5); // subtotal only, no shipping cost
   });
@@ -325,13 +325,13 @@ describe('CartService Multi-Store Operations', () => {
 
   it('evaluates shipping and pickup rules for newly added German stores (Eckstein & Watterott)', () => {
     const eckstein = registry.getShop('eckstein')!;
-    // Eckstein standard DHL (€4.90, free from €79.00)
+    // Eckstein standard DHL (€6.50, free from €200.00)
     const eckUnder = eckstein.calculateShipping(40.0);
-    expect(eckUnder.cost).toBe(4.9);
-    expect(eckUnder.threshold).toBe(79.0);
-    expect(eckUnder.remainingForFree).toBe(39.0);
+    expect(eckUnder.cost).toBe(6.5);
+    expect(eckUnder.threshold).toBe(200.0);
+    expect(eckUnder.remainingForFree).toBe(160.0);
 
-    const eckAt = eckstein.calculateShipping(79.0);
+    const eckAt = eckstein.calculateShipping(200.0);
     expect(eckAt.cost).toBe(0.0);
     expect(eckAt.isFree).toBe(true);
 

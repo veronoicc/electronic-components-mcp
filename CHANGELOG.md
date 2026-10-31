@@ -10,9 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Model Context Protocol (MCP) server for electronic component search, store price comparisons, and multi-store shopping cart management.
 - Integration with 7 regional and global electronic component stores:
-  - **BerryBase** (DE): DHL Paket (€4.95, free from €200), UPS Standard/Express Saver, local pickup in Berlin store.
-  - **Roboter-Bausatz** (DE): DHL Paket (€4.45, free from €99), DHL Express, local pickup in Bad Bentheim.
-  - **Eckstein Komponente** (DE): DHL Paket (€4.90, free from €79), Deutsche Post Warensendung (€2.90), local pickup in Clausthal-Zellerfeld.
+  - **BerryBase** (DE): DHL Paket (€4.95, free from €200), UPS Standard/Express Saver, local pickup in MakerSpace Berlin-Adlershof.
+  - **Roboter-Bausatz** (DE): DHL Paket (€4.45, free from €99), DHL Express, local pickup in Lager Saarbrücken.
+  - **Eckstein Komponente** (DE): DHL / DPD Paket (€6.50, free from €200), Warenpost (€2.60), local pickup in Clausthal-Zellerfeld.
   - **Watterott electronic** (DE): DHL Paket (€4.50, free from €100), DHL Express, local pickup in Leinefelde-Worbis.
   - **Antratek Deutschland** (DE): DPD / PostNL (€7.08 gross, free from €119), UPS Express.
   - **Botland** (DE): GLS Kurier (€4.99, free from €100), DHL Kurier, Hermes.
