@@ -17,7 +17,7 @@ export class AntratekShopAdapter extends BaseShopAdapter {
       standardCost: 7.08,
       freeShippingThreshold: 119.0,
       currency: 'EUR',
-      deliveryDays: '1–2 Werktage',
+      deliveryDays: '1-2 Werktage',
       policyUrl: 'https://www.antratek.de/bestellinformationen#Versandinformationen',
       notes: 'DPD / PostNL: 7,08 € brutto (versandkostenfrei ab 119,00 € brutto). Gleichtägige Bearbeitung vor 17:00 Uhr.',
       defaultMethodId: 'dpd',
@@ -30,7 +30,7 @@ export class AntratekShopAdapter extends BaseShopAdapter {
           carrier: 'DPD / PostNL',
           cost: 7.08,
           freeShippingThreshold: 119.0,
-          deliveryDays: '1–2 Werktage',
+          deliveryDays: '1-2 Werktage',
           notes: 'Standardversand DPD / PostNL',
         },
         {
@@ -94,7 +94,7 @@ export class AntratekShopAdapter extends BaseShopAdapter {
         stockDescription: stockText || (inStock ? 'Auf Lager' : 'Nicht auf Lager'),
         url: fullUrl,
         imageUrl,
-        shippingEstimate: '1–2 Werktage',
+        shippingEstimate: '1-2 Werktage',
         category: null,
       });
     });
@@ -103,7 +103,7 @@ export class AntratekShopAdapter extends BaseShopAdapter {
   }
 
   async getById(id: string): Promise<ComponentItem | null> {
-    // If id looks like a URL slug, fetch directly; otherwise search
+
     const path = id.startsWith('http') ? id : `${this.metadata.baseUrl}/${id.replace(/^\//, '')}`;
     try {
       const html = await httpClient.fetchHtml(path);
@@ -140,7 +140,7 @@ export class AntratekShopAdapter extends BaseShopAdapter {
         stockDescription: inStock ? 'Auf Lager' : 'Nicht auf Lager',
         url: path,
         imageUrl,
-        shippingEstimate: '1–2 Werktage',
+        shippingEstimate: '1-2 Werktage',
         category: null,
       };
     } catch {

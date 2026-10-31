@@ -25,7 +25,7 @@ export class RoboterBausatzShopAdapter extends BaseShopAdapter {
       standardCost: 4.45,
       freeShippingThreshold: 99.0,
       currency: 'EUR',
-      deliveryDays: '1–3 Werktage',
+      deliveryDays: '1-3 Werktage',
       policyUrl: 'https://www.roboter-bausatz.de/c/information/versand-und-zahlung',
       notes: 'DHL Paket: 4,45 € (versandkostenfrei ab 99,00 €). Versand am gleichen Tag bei Zahlung bis 12:00 Uhr. Selbstabholung in Bad Bentheim möglich.',
       defaultMethodId: 'dhl',
@@ -36,7 +36,7 @@ export class RoboterBausatzShopAdapter extends BaseShopAdapter {
         city: 'Bad Bentheim',
         postalCode: '48455',
         country: 'DE',
-        openingHours: 'Mo–Fr 09:00–16:00 Uhr',
+        openingHours: 'Mo-Fr 09:00-16:00 Uhr',
         instructions: 'Kostenlose Abholung nach Bereitstellungsbestätigung.',
       },
       methods: [
@@ -47,7 +47,7 @@ export class RoboterBausatzShopAdapter extends BaseShopAdapter {
           carrier: 'DHL Paket',
           cost: 4.45,
           freeShippingThreshold: 99.0,
-          deliveryDays: '1–3 Werktage',
+          deliveryDays: '1-3 Werktage',
           notes: 'DHL Paketversand',
         },
         {
@@ -64,7 +64,7 @@ export class RoboterBausatzShopAdapter extends BaseShopAdapter {
             city: 'Bad Bentheim',
             postalCode: '48455',
             country: 'DE',
-            openingHours: 'Mo–Fr 09:00–16:00 Uhr',
+            openingHours: 'Mo-Fr 09:00-16:00 Uhr',
             instructions: 'Kostenlose Abholung nach Bereitstellungsbestätigung.',
           },
           notes: 'Kostenlose Abholung am Standort Bad Bentheim',
@@ -150,7 +150,7 @@ export class RoboterBausatzShopAdapter extends BaseShopAdapter {
         stockDescription: deliveryText.trim() || (inStock ? 'Auf Lager' : 'Nicht auf Lager'),
         url: fullUrl,
         imageUrl,
-        shippingEstimate: '1–3 Werktage',
+        shippingEstimate: '1-3 Werktage',
         category: null,
       });
     });
@@ -166,7 +166,6 @@ export class RoboterBausatzShopAdapter extends BaseShopAdapter {
 
       const title = $('h1.product-detail-name, h1').first().text().trim();
       if (!title) {
-        // Try searching by ID
         const searchResults = await this.search(id, { limit: 1 });
         return searchResults[0] ?? null;
       }
@@ -201,7 +200,7 @@ export class RoboterBausatzShopAdapter extends BaseShopAdapter {
         stockDescription: deliveryText.trim() || (inStock ? 'Auf Lager' : 'Nicht auf Lager'),
         url: detailUrl,
         imageUrl,
-        shippingEstimate: '1–3 Werktage',
+        shippingEstimate: '1-3 Werktage',
         category: null,
       };
     } catch {

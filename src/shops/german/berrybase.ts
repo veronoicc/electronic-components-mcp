@@ -25,7 +25,7 @@ export class BerrybaseShopAdapter extends BaseShopAdapter {
       standardCost: 4.95,
       freeShippingThreshold: 200.0,
       currency: 'EUR',
-      deliveryDays: '1–3 Werktage',
+      deliveryDays: '1-3 Werktage',
       policyUrl: 'https://www.berrybase.de/versand-und-zahlungsbedingungen',
       notes: 'DHL Paket: 4,95 € (versandkostenfrei ab 200,00 €). UPS Standard: 5,90 € (frei ab 250,00 €). Kostenlose Selbstabholung in Berlin.',
       defaultMethodId: 'dhl',
@@ -36,7 +36,7 @@ export class BerrybaseShopAdapter extends BaseShopAdapter {
         city: 'Berlin',
         postalCode: '13086',
         country: 'DE',
-        openingHours: 'Mo–Fr 09:00–17:00 Uhr',
+        openingHours: 'Mo-Fr 09:00-17:00 Uhr',
         instructions: 'Kostenlose Abholung nach Bereitstellungsbenachrichtigung per E-Mail.',
       },
       methods: [
@@ -47,7 +47,7 @@ export class BerrybaseShopAdapter extends BaseShopAdapter {
           carrier: 'DHL Paket',
           cost: 4.95,
           freeShippingThreshold: 200.0,
-          deliveryDays: '1–3 Werktage',
+          deliveryDays: '1-3 Werktage',
           notes: 'Standardversand mit DHL Paket',
         },
         {
@@ -64,7 +64,7 @@ export class BerrybaseShopAdapter extends BaseShopAdapter {
             city: 'Berlin',
             postalCode: '13086',
             country: 'DE',
-            openingHours: 'Mo–Fr 09:00–17:00 Uhr',
+            openingHours: 'Mo-Fr 09:00-17:00 Uhr',
             instructions: 'Kostenlose Abholung nach Bereitstellungsbenachrichtigung per E-Mail.',
           },
           notes: 'Kostenlose Selbstabholung im Store Berlin',
@@ -76,7 +76,7 @@ export class BerrybaseShopAdapter extends BaseShopAdapter {
           carrier: 'UPS',
           cost: 5.9,
           freeShippingThreshold: 250.0,
-          deliveryDays: '1–2 Werktage',
+          deliveryDays: '1-2 Werktage',
           notes: 'UPS Standardversand (versandkostenfrei ab 250,00 €)',
         },
         {
@@ -160,7 +160,7 @@ export class BerrybaseShopAdapter extends BaseShopAdapter {
         stockDescription: deliveryText.trim() || (inStock ? 'Auf Lager' : 'Nicht auf Lager'),
         url: fullUrl,
         imageUrl,
-        shippingEstimate: '1–3 Werktage',
+        shippingEstimate: '1-3 Werktage',
         category: null,
       });
     });
@@ -204,11 +204,10 @@ export class BerrybaseShopAdapter extends BaseShopAdapter {
         stockDescription: deliveryText.trim() || (inStock ? 'Auf Lager' : 'Nicht auf Lager'),
         url: detailUrl,
         imageUrl,
-        shippingEstimate: '1–3 Werktage',
+        shippingEstimate: '1-3 Werktage',
         category: null,
       };
     } catch {
-      // Fall back to searching for the ID
       const searchResults = await this.search(id, { limit: 1 });
       return searchResults[0] ?? null;
     }

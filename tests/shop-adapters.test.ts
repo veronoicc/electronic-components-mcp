@@ -52,7 +52,7 @@ describe('BaseShopAdapter Filter & Search Options', () => {
         standardCost: 5.0,
         freeShippingThreshold: 50.0,
         currency: 'EUR',
-        deliveryDays: '1–2 days',
+        deliveryDays: '1-2 days',
         policyUrl: 'https://test.local/shipping',
         notes: 'Test notes',
         methods: [],

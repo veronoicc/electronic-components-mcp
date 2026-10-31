@@ -52,7 +52,7 @@ describe('ShopRegistry', () => {
           standardCost: 5.0,
           freeShippingThreshold: 100.0,
           currency: 'EUR',
-          deliveryDays: '3–5 days',
+          deliveryDays: '3-5 days',
           policyUrl: 'https://www.sparkfun.com/shipping',
           notes: 'US shipping',
           methods: [],

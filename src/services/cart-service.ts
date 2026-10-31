@@ -6,9 +6,7 @@ import { roundEur } from '../utils/currency.js';
 import { searchService, SearchService } from './search-service.js';
 
 export class CartService {
-  // Map of shopId -> Map of slug -> CartItem
   private carts = new Map<string, Map<string, CartItem>>();
-  // Map of shopId -> selected shipping method ID (e.g. 'pickup', 'dhl', 'ups_express')
   private selectedMethods = new Map<string, string>();
 
   constructor(
@@ -49,7 +47,6 @@ export class CartService {
       return existing;
     }
 
-    // New item: fetch details if not provided
     let component = itemData;
     if (!component) {
       const fetched = await this.search.getBySlug(slug);

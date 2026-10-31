@@ -144,7 +144,7 @@ describe('CartService Multi-Store Operations', () => {
       stockDescription: 'Auf Lager',
       url: 'https://www.berrybase.de/pico',
       imageUrl: null,
-      shippingEstimate: '1–3 Werktage',
+      shippingEstimate: '1-3 Werktage',
       category: 'microcontroller',
     };
 
@@ -163,7 +163,7 @@ describe('CartService Multi-Store Operations', () => {
       stockDescription: 'Auf Lager',
       url: 'https://www.aliexpress.com/item/ali-1.html',
       imageUrl: null,
-      shippingEstimate: '7–15 Werktage',
+      shippingEstimate: '7-15 Werktage',
       category: 'sensor',
     };
 
@@ -211,7 +211,7 @@ describe('CartService Multi-Store Operations', () => {
       stockDescription: 'Auf Lager',
       url: 'https://www.roboter-bausatz.de/motor',
       imageUrl: null,
-      shippingEstimate: '1–3 Werktage',
+      shippingEstimate: '1-3 Werktage',
       category: 'motor_driver',
     };
 
@@ -248,7 +248,7 @@ describe('CartService Multi-Store Operations', () => {
       stockDescription: 'Auf Lager',
       url: 'https://botland.de/arduino',
       imageUrl: null,
-      shippingEstimate: '2–3 Werktage',
+      shippingEstimate: '2-3 Werktage',
       category: 'microcontroller',
     };
 
@@ -281,7 +281,7 @@ describe('CartService Multi-Store Operations', () => {
       stockDescription: 'Auf Lager',
       url: 'https://www.berrybase.de/esp32',
       imageUrl: null,
-      shippingEstimate: '1–3 Werktage',
+      shippingEstimate: '1-3 Werktage',
       category: 'microcontroller',
     };
 

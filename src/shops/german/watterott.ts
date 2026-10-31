@@ -17,7 +17,7 @@ export class WatterottShopAdapter extends BaseShopAdapter {
       standardCost: 4.5,
       freeShippingThreshold: 100.0,
       currency: 'EUR',
-      deliveryDays: '1–3 Werktage',
+      deliveryDays: '1-3 Werktage',
       policyUrl: 'https://shop.watterott.com/Zahlung-Versand',
       notes: 'DHL Paket: 4,50 € (versandkostenfrei ab 100,00 € in DE). Kostenlose Selbstabholung in Leinefelde-Worbis.',
       defaultMethodId: 'dhl',
@@ -28,7 +28,7 @@ export class WatterottShopAdapter extends BaseShopAdapter {
         city: 'Leinefelde-Worbis',
         postalCode: '37327',
         country: 'DE',
-        openingHours: 'Mo–Fr 09:00–15:00 Uhr',
+        openingHours: 'Mo-Fr 09:00-15:00 Uhr',
         instructions: 'Kostenlose Abholung nach Bereitstellungsbestätigung per E-Mail.',
       },
       methods: [
@@ -39,7 +39,7 @@ export class WatterottShopAdapter extends BaseShopAdapter {
           carrier: 'DHL',
           cost: 4.5,
           freeShippingThreshold: 100.0,
-          deliveryDays: '1–3 Werktage',
+          deliveryDays: '1-3 Werktage',
           notes: 'Standard DHL Paketversand (versandkostenfrei ab 100,00 €)',
         },
         {
@@ -56,7 +56,7 @@ export class WatterottShopAdapter extends BaseShopAdapter {
             city: 'Leinefelde-Worbis',
             postalCode: '37327',
             country: 'DE',
-            openingHours: 'Mo–Fr 09:00–15:00 Uhr',
+            openingHours: 'Mo-Fr 09:00-15:00 Uhr',
             instructions: 'Kostenlose Abholung nach Bereitstellungsbestätigung per E-Mail.',
           },
           notes: 'Kostenlose Selbstabholung am Hauptstandort',
@@ -131,7 +131,7 @@ export class WatterottShopAdapter extends BaseShopAdapter {
         stockDescription: deliveryText.trim() || (inStock ? 'Auf Lager' : 'Nicht auf Lager'),
         url: rawUrl,
         imageUrl,
-        shippingEstimate: '1–3 Werktage',
+        shippingEstimate: '1-3 Werktage',
         category: null,
       });
     });

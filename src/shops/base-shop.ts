@@ -47,7 +47,6 @@ export abstract class BaseShopAdapter implements ShopAdapter {
       },
     ];
 
-    // Select the requested method or fallback to default
     let selectedMethod: ShippingMethod | undefined;
 
     if (options.methodId) {

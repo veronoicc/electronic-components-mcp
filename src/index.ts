@@ -7,7 +7,6 @@ import { registerAllShops } from './shops/index.js';
 import { registerTools } from './tools/register-tools.js';
 
 async function main(): Promise<void> {
-  // Register all available shop adapters
   registerAllShops(shopRegistry);
 
   const server = new McpServer({
@@ -15,10 +14,8 @@ async function main(): Promise<void> {
     version: '1.0.0',
   });
 
-  // Register all 10 MCP tools
   registerTools(server);
 
-  // Connect stdio transport
   const transport = new StdioServerTransport();
   await server.connect(transport);
 

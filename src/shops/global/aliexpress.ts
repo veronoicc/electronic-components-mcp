@@ -42,7 +42,7 @@ export class AliexpressShopAdapter extends BaseShopAdapter {
       standardCost: 2.99,
       freeShippingThreshold: 10.0,
       currency: 'EUR',
-      deliveryDays: '7–15 Werktage',
+      deliveryDays: '7-15 Werktage',
       policyUrl: 'https://customerservice.aliexpress.com',
       notes: 'AliExpress Choice: Kostenloser Versand ab 10,00 € Bestellwert. Standardversand für Einzelartikel ca. 2,99 €.',
       defaultMethodId: 'choice_standard',
@@ -55,7 +55,7 @@ export class AliexpressShopAdapter extends BaseShopAdapter {
           carrier: 'AliExpress Standard Shipping',
           cost: 2.99,
           freeShippingThreshold: 10.0,
-          deliveryDays: '7–15 Werktage',
+          deliveryDays: '7-15 Werktage',
           notes: 'Standardversand / Choice Bündelung ab 10 € kostenfrei',
         },
         {
@@ -65,7 +65,7 @@ export class AliexpressShopAdapter extends BaseShopAdapter {
           carrier: 'AliExpress Premium',
           cost: 15.99,
           freeShippingThreshold: null,
-          deliveryDays: '5–9 Werktage',
+          deliveryDays: '5-9 Werktage',
           notes: 'Schnellere Expresszustellung',
         },
       ],
@@ -128,7 +128,7 @@ export class AliexpressShopAdapter extends BaseShopAdapter {
         stockDescription: 'Auf Lager',
         url: detailUrl,
         imageUrl,
-        shippingEstimate: '7–15 Werktage',
+        shippingEstimate: '7-15 Werktage',
         category: null,
       };
     } catch {
@@ -207,7 +207,7 @@ export class AliexpressShopAdapter extends BaseShopAdapter {
         const isFreeShipping = Boolean(raw.logistics?.freeShipping);
         const shippingEstimate = isFreeShipping
           ? 'Kostenloser Versand'
-          : raw.logistics?.shippingMemo || '7–15 Werktage';
+          : raw.logistics?.shippingMemo || '7-15 Werktage';
 
         items.push({
           id,
@@ -274,7 +274,7 @@ export class AliexpressShopAdapter extends BaseShopAdapter {
         stockDescription: 'Auf Lager',
         url: `${this.metadata.baseUrl}/item/${id}.html`,
         imageUrl,
-        shippingEstimate: '7–15 Werktage',
+        shippingEstimate: '7-15 Werktage',
         category: null,
       });
     });

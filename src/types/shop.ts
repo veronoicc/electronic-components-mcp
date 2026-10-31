@@ -19,7 +19,7 @@ export interface ShippingMethod {
   carrier: string; // e.g. 'DHL', 'Selbstabholung', 'UPS', 'GLS', 'DPD'
   cost: number; // EUR gross
   freeShippingThreshold: number | null; // EUR gross or null if no threshold
-  deliveryDays: string; // e.g. '1–3 Werktage' or 'Sofort abholbereit'
+  deliveryDays: string;
   pickupLocation?: PickupLocation | null;
   notes?: string;
 }

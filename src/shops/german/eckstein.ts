@@ -17,7 +17,7 @@ export class EcksteinShopAdapter extends BaseShopAdapter {
       standardCost: 4.9,
       freeShippingThreshold: 79.0,
       currency: 'EUR',
-      deliveryDays: '1–3 Werktage',
+      deliveryDays: '1-3 Werktage',
       policyUrl: 'https://eckstein-shop.de/Versandinformationen',
       notes: 'DHL Paket: 4,90 € (versandkostenfrei ab 79,00 €). Kostenlose Selbstabholung in Clausthal-Zellerfeld.',
       defaultMethodId: 'dhl',
@@ -28,7 +28,7 @@ export class EcksteinShopAdapter extends BaseShopAdapter {
         city: 'Clausthal-Zellerfeld',
         postalCode: '38678',
         country: 'DE',
-        openingHours: 'Mo–Fr 09:00–16:00 Uhr',
+        openingHours: 'Mo-Fr 09:00-16:00 Uhr',
         instructions: 'Kostenlose Abholung nach Bereitstellungsbestätigung per E-Mail.',
       },
       methods: [
@@ -39,7 +39,7 @@ export class EcksteinShopAdapter extends BaseShopAdapter {
           carrier: 'DHL',
           cost: 4.9,
           freeShippingThreshold: 79.0,
-          deliveryDays: '1–3 Werktage',
+          deliveryDays: '1-3 Werktage',
           notes: 'Standardversand mit DHL Paket',
         },
         {
@@ -56,7 +56,7 @@ export class EcksteinShopAdapter extends BaseShopAdapter {
             city: 'Clausthal-Zellerfeld',
             postalCode: '38678',
             country: 'DE',
-            openingHours: 'Mo–Fr 09:00–16:00 Uhr',
+            openingHours: 'Mo-Fr 09:00-16:00 Uhr',
             instructions: 'Kostenlose Abholung nach Bereitstellungsbestätigung per E-Mail.',
           },
           notes: 'Kostenlose Selbstabholung am Standort Clausthal-Zellerfeld',
@@ -68,7 +68,7 @@ export class EcksteinShopAdapter extends BaseShopAdapter {
           carrier: 'Deutsche Post',
           cost: 2.9,
           freeShippingThreshold: null,
-          deliveryDays: '2–4 Werktage',
+          deliveryDays: '2-4 Werktage',
           notes: 'Kompakte Warensendung für Kleinteile',
         },
         {
@@ -147,7 +147,7 @@ export class EcksteinShopAdapter extends BaseShopAdapter {
         stockDescription: deliveryText.trim() || (inStock ? 'Auf Lager' : 'Nicht auf Lager'),
         url: rawUrl,
         imageUrl,
-        shippingEstimate: '1–3 Werktage',
+        shippingEstimate: '1-3 Werktage',
         category: null,
       });
     });

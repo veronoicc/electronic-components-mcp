@@ -17,9 +17,9 @@ export class BotlandShopAdapter extends BaseShopAdapter {
       standardCost: 4.99,
       freeShippingThreshold: 100.0,
       currency: 'EUR',
-      deliveryDays: '2–3 Werktage',
+      deliveryDays: '2-3 Werktage',
       policyUrl: 'https://botland.de/content/1-lieferung-und-bezahlung',
-      notes: 'GLS / DHL / Hermes: 4,99 € (versandkostenfrei ab 100,00 €). Gleichtägiger Versand vor 14:00 Uhr (Di–Fr) bzw. 13:00 Uhr (Mo).',
+      notes: 'GLS / DHL / Hermes: 4,99 € (versandkostenfrei ab 100,00 €). Gleichtägiger Versand vor 14:00 Uhr (Di-Fr) bzw. 13:00 Uhr (Mo).',
       defaultMethodId: 'gls',
       pickupAvailable: false,
       methods: [
@@ -30,7 +30,7 @@ export class BotlandShopAdapter extends BaseShopAdapter {
           carrier: 'GLS Kurier',
           cost: 4.99,
           freeShippingThreshold: 100.0,
-          deliveryDays: '2–3 Werktage',
+          deliveryDays: '2-3 Werktage',
           notes: 'Standardzustellung mit GLS Kurier',
         },
         {
@@ -40,7 +40,7 @@ export class BotlandShopAdapter extends BaseShopAdapter {
           carrier: 'DHL Kurier',
           cost: 5.99,
           freeShippingThreshold: 120.0,
-          deliveryDays: '2–3 Werktage',
+          deliveryDays: '2-3 Werktage',
           notes: 'DHL Kurierzustellung',
         },
         {
@@ -50,7 +50,7 @@ export class BotlandShopAdapter extends BaseShopAdapter {
           carrier: 'Hermes',
           cost: 4.49,
           freeShippingThreshold: null,
-          deliveryDays: '2–4 Werktage',
+          deliveryDays: '2-4 Werktage',
           notes: 'Günstiger Paketversand mit Hermes',
         },
       ],
@@ -107,7 +107,7 @@ export class BotlandShopAdapter extends BaseShopAdapter {
         stockDescription: inStock ? 'Auf Lager' : 'Nicht auf Lager',
         url: fullUrl,
         imageUrl,
-        shippingEstimate: '2–3 Werktage',
+        shippingEstimate: '2-3 Werktage',
         category: null,
       });
     });
@@ -116,7 +116,7 @@ export class BotlandShopAdapter extends BaseShopAdapter {
   }
 
   async getById(id: string): Promise<ComponentItem | null> {
-    // If id is numeric product ID, search for it
+
     const searchResults = await this.search(id, { limit: 1 });
     return searchResults[0] ?? null;
   }

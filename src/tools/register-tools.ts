@@ -6,7 +6,6 @@ import { cartService } from '../services/cart-service.js';
 import { searchService } from '../services/search-service.js';
 
 export function registerTools(server: McpServer): void {
-  // 1. search_components
   server.tool(
     'search_components',
     'Search electronic components across registered online stores by keyword or part name',
@@ -70,7 +69,6 @@ export function registerTools(server: McpServer): void {
     }
   );
 
-  // 2. search_components_by_type
   server.tool(
     'search_components_by_type',
     'Search electronic components by structured component category and optional ratings/specs',
@@ -134,7 +132,6 @@ export function registerTools(server: McpServer): void {
     }
   );
 
-  // 3. get_component_by_slug
   server.tool(
     'get_component_by_slug',
     'Retrieve exact component details using a composite slug',
@@ -180,7 +177,6 @@ export function registerTools(server: McpServer): void {
     }
   );
 
-  // 4. get_component_by_id
   server.tool(
     'get_component_by_id',
     "Retrieve component details using a specific store identifier and store's internal item ID",
@@ -227,7 +223,6 @@ export function registerTools(server: McpServer): void {
     }
   );
 
-  // 5. list_supported_shops
   server.tool(
     'list_supported_shops',
     'List all registered electronic component stores with their shipping policies and supported regions',
@@ -257,7 +252,6 @@ export function registerTools(server: McpServer): void {
     }
   );
 
-  // 6. cart_add_item
   server.tool(
     'cart_add_item',
     'Add an electronic component to the store shopping cart',
@@ -297,7 +291,6 @@ export function registerTools(server: McpServer): void {
     }
   );
 
-  // 7. cart_update_item
   server.tool(
     'cart_update_item',
     'Update the quantity of an item in the shopping cart (0 to remove)',
@@ -339,7 +332,6 @@ export function registerTools(server: McpServer): void {
     }
   );
 
-  // 8. cart_remove_item
   server.tool(
     'cart_remove_item',
     'Remove an item completely from the shopping cart',
@@ -368,7 +360,6 @@ export function registerTools(server: McpServer): void {
     }
   );
 
-  // 9. cart_set_shipping_method
   server.tool(
     'cart_set_shipping_method',
     'Select a specific shipping or pickup method for a store cart (e.g. "pickup", "dhl", "ups_express")',
@@ -412,7 +403,6 @@ export function registerTools(server: McpServer): void {
     }
   );
 
-  // 10. cart_view
   server.tool(
     'cart_view',
     'View the current shopping cart with shipping costs, pickup locations, free shipping thresholds, and grand totals',
@@ -470,7 +460,6 @@ export function registerTools(server: McpServer): void {
     }
   );
 
-  // 11. cart_clear
   server.tool(
     'cart_clear',
     'Clear items from shopping cart for a specific shop or all shops',
