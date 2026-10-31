@@ -1,4 +1,4 @@
-# electronic-components-mcp
+# @veronoicc/electronic-components-mcp
 
 Model Context Protocol (MCP) server for electronic components. Search components across diverse regional stores (German shops and global sellers like AliExpress), look up items by slug or category, and manage multi-store shopping carts with accurate shipping calculations, alternative shipping carriers, free-shipping threshold qualification, and local pickup support.
 
@@ -47,7 +47,17 @@ pnpm test
 
 ### Run Server
 
+Via npx:
+
 ```bash
+npx -y @veronoicc/electronic-components-mcp
+```
+
+From source:
+
+```bash
+pnpm install
+pnpm build
 node dist/index.js
 ```
 

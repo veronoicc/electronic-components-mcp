@@ -10,7 +10,7 @@ async function main(): Promise<void> {
   registerAllShops(shopRegistry);
 
   const server = new McpServer({
-    name: 'electronic-components-mcp',
+    name: '@veronoicc/electronic-components-mcp',
     version: '1.0.0',
   });
 
@@ -19,10 +19,10 @@ async function main(): Promise<void> {
   const transport = new StdioServerTransport();
   await server.connect(transport);
 
-  console.error('[electronic-components-mcp] Server running on stdio');
+  console.error('[@veronoicc/electronic-components-mcp] Server running on stdio');
 }
 
 main().catch((err: unknown) => {
-  console.error('[electronic-components-mcp] Fatal error:', err instanceof Error ? err.stack : String(err));
+  console.error('[@veronoicc/electronic-components-mcp] Fatal error:', err instanceof Error ? err.stack : String(err));
   process.exit(1);
 });

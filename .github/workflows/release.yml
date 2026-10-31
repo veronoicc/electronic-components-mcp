@@ -114,7 +114,8 @@ jobs:
       - name: Publish to GitHub Packages
         if: steps.check_version.outputs.exists == 'false'
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
-          pnpm publish --registry=https://npm.pkg.github.com --no-git-checks || true
+          echo "@veronoicc:registry=https://npm.pkg.github.com" > ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> ~/.npmrc
+          pnpm publish --registry=https://npm.pkg.github.com --no-git-checks
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

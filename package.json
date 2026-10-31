@@ -1,9 +1,17 @@
 {
-  "name": "electronic-components-mcp",
+  "name": "@veronoicc/electronic-components-mcp",
   "version": "1.0.0",
   "description": "Model Context Protocol (MCP) server for electronic components search, store comparisons, and multi-store cart management",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veronoicc/electronic-components-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/veronoicc/electronic-components-mcp/issues"
+  },
+  "homepage": "https://github.com/veronoicc/electronic-components-mcp#readme",
   "bin": {
     "electronic-components-mcp": "./dist/index.js"
   },
