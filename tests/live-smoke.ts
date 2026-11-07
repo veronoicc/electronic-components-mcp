@@ -12,7 +12,7 @@ async function runLiveSmoke() {
   console.log(`Registered shops (${shops.length}):`, shops.map((s) => s.metadata.id).join(', '));
 
   // 1. Test search on each individual shop
-  console.log('\n--- Step 1: Testing live search for "esp32" on all 7 shops ---');
+  console.log(`\n--- Step 1: Testing live search for "esp32" on all ${shops.length} shops ---`);
   const retrievedItems: ComponentItem[] = [];
 
   for (const shop of shops) {

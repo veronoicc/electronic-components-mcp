@@ -23,7 +23,31 @@ describe('ShopRegistry', () => {
 
     const deShops = registry.getShopsForCountries(['de']);
     const ids = deShops.map((s) => s.metadata.id).sort();
-    expect(ids).toEqual(['antratek', 'berrybase', 'botland', 'eckstein', 'roboter-bausatz', 'watterott']);
+    expect(ids).toEqual([
+      'antratek',
+      'az-delivery',
+      'bastelgarage',
+      'berrybase',
+      'botland',
+      'buerklin',
+      'conrad',
+      'digikey',
+      'eckstein',
+      'elv',
+      'exp-tech',
+      'farnell',
+      'funduino',
+      'komputer',
+      'makershop',
+      'mouser',
+      'paradisetronic',
+      'pollin',
+      'reichelt',
+      'roboter-bausatz',
+      'tme',
+      'watterott',
+      'welectron',
+    ]);
   });
 
   it('filters both German and Global stores when ["de", "global"] is specified', () => {
@@ -32,7 +56,32 @@ describe('ShopRegistry', () => {
 
     const all = registry.getShopsForCountries(['de', 'global']);
     const ids = all.map((s) => s.metadata.id).sort();
-    expect(ids).toEqual(['aliexpress', 'antratek', 'berrybase', 'botland', 'eckstein', 'roboter-bausatz', 'watterott']);
+    expect(ids).toEqual([
+      'aliexpress',
+      'antratek',
+      'az-delivery',
+      'bastelgarage',
+      'berrybase',
+      'botland',
+      'buerklin',
+      'conrad',
+      'digikey',
+      'eckstein',
+      'elv',
+      'exp-tech',
+      'farnell',
+      'funduino',
+      'komputer',
+      'makershop',
+      'mouser',
+      'paradisetronic',
+      'pollin',
+      'reichelt',
+      'roboter-bausatz',
+      'tme',
+      'watterott',
+      'welectron',
+    ]);
   });
 
   it('is extensible: newly registered country surfaces immediately without code changes', () => {
@@ -81,6 +130,24 @@ describe('ShopRegistry', () => {
 
     const usShops = registry.getShopsForCountries(['us']);
     expect(usShops.map((s) => s.metadata.id)).toEqual(['sparkfun']);
+  });
+
+  it('all registered shops have valid metadata, URLs and calculateShipping behavior', () => {
+    const registry = new ShopRegistry();
+    registerAllShops(registry);
+    const all = registry.getAllShops();
+
+    expect(all.length).toBe(24);
+    for (const shop of all) {
+      expect(shop.metadata.id).toBeTruthy();
+      expect(shop.metadata.name).toBeTruthy();
+      expect(shop.metadata.baseUrl.startsWith('http')).toBe(true);
+      expect(shop.metadata.shippingPolicy.currency).toBe('EUR');
+      expect(typeof shop.metadata.shippingPolicy.standardCost).toBe('number');
+      const calc = shop.calculateShipping(10.0);
+      expect(typeof calc.cost).toBe('number');
+      expect(typeof calc.isFree).toBe('boolean');
+    }
   });
 });
 

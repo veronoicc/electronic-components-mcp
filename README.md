@@ -12,6 +12,23 @@ Model Context Protocol (MCP) server for electronic components. Search components
 | **Watterott electronic** | `de` | DHL Paket | €4.50 | **€100.00** | Leinefelde-Worbis (Breitenhölzer Str. 6, 37327 Leinefelde-Worbis) |
 | **Antratek Deutschland** | `de` | DPD / PostNL | €7.08 gross | **€119.00** gross | Mail order dispatch |
 | **Botland** | `de` | GLS Kurier | €4.99 | **€100.00** | Mail order dispatch |
+| **EXP Tech** | `de` | UPS Standard | €6.50 | None | Mail order dispatch |
+| **Paradisetronic** | `de` | DHL-Kleinpaket | €3.50 | **€40.00** | Berlin-Reinickendorf (Breitenbachstr. 24, 13509 Berlin) |
+| **Welectron** | `de` | DHL / DPD Paket | €4.95 | **€49.00** (DPD) / **€99.00** (DHL) | Mail order dispatch |
+| **AZ-Delivery** | `de` | DHL / Deutsche Post | €3.90 | **€25.00** | Mail order dispatch |
+| **Makershop** | `de` | Deutsche Post / DHL | €2.50 | **€10.00** | Mail order dispatch |
+| **Komputer.de** | `de` | Deutsche Post / DHL | €3.50 | None | Mail order dispatch |
+| **Funduino** | `de` | DHL Paket | €4.90 | None | Mail order dispatch |
+| **Bastelgarage** | `de` | Swiss Post / PostPac | €14.50 | None | Subingen (Gewerbestrasse 23, CH-4553 Subingen) |
+| **Reichelt Elektronik** | `de` | DHL Paket | €5.95 | None | Sande (Elektronikring 1, 26452 Sande) |
+| **Conrad Electronic** | `de` | DHL / Hermes | €4.95 | **€100.00** | Filialabholung (Click & Collect deutschlandweit) |
+| **Pollin Electronic** | `de` | DHL Paket | €5.99 | None | Pförring (Max-Pollin-Straße 1, 85104 Pförring) |
+| **ELV Elektronik** | `de` | DHL / GLS | €3.99 | **€39.00** | Mail order dispatch |
+| **Mouser Electronics** | `de` | UPS / FedEx / DHL Express | €20.00 | **€50.00** net (€59.50 gross) | Mail order dispatch (DDP) |
+| **DigiKey** | `de` | UPS / FedEx | €25.00 | **€75.00** | Mail order dispatch (DDP) |
+| **Farnell** | `de` | UPS / DHL Express | €11.99 | **€75.00** net | Mail order dispatch |
+| **Bürklin Elektronik** | `de` | UPS Standard | €8.21 gross | None | Oberhaching (Grünwalder Weg 30, 82041 Oberhaching) |
+| **TME** | `de` | DHL Paket / GLS | €9.40 gross | None | Mail order dispatch |
 | **AliExpress** | `global` | Choice / Standard | €2.99 fallback | **€10.00** (Choice bundle) | Standard home delivery |
 
 ## Features

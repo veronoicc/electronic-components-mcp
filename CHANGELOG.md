@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [1.1.0] - 2026-11-07
+
+### Added
+- Integrated 17 new electronic component stores for Germany:
+  - **EXP Tech**: UPS Standard (€6.50).
+  - **Paradisetronic**: DHL-Kleinpaket (€3.50, free from €40), appointment pickup in Berlin-Reinickendorf.
+  - **Welectron**: DHL / DPD Paket (€4.95, free from €49 DPD / €99 DHL), UPS Standard/Express.
+  - **AZ-Delivery**: DHL / Deutsche Post (€3.90, free from €25).
+  - **Makershop**: Deutsche Post / DHL (€2.50, free from €10).
+  - **Komputer.de**: Deutsche Post / DHL (€3.50).
+  - **Funduino**: DHL Paket (€4.90), priority processing.
+  - **Bastelgarage**: Swiss Post / PostPac Intl (€14.50), warehouse pickup in Subingen CH.
+  - **Reichelt Elektronik**: DHL Paket (€5.95), DPD, local pickup in Sande.
+  - **Conrad Electronic**: DHL / Hermes (€4.95, free from €100), Express, Click & Collect Filialabholung.
+  - **Pollin Electronic**: DHL Paket (€5.99), local pickup at Electronic Center Pförring.
+  - **ELV Elektronik**: DHL / GLS (€3.99, free from €39).
+  - **Mouser Electronics**: UPS / FedEx / DHL Express (€20.00, free from €50 net / €59.50 gross, DDP).
+  - **DigiKey**: UPS / FedEx (€25.00, free from €75, DDP).
+  - **Farnell**: UPS / DHL Express (€11.99, free from €75 net).
+  - **Bürklin Elektronik**: UPS Standard (€8.21 gross), Express Saver, 24/7 pickup in Oberhaching.
+  - **TME**: DHL Paket / GLS from Poland (€9.40 gross), UPS/DHL Express.
+- Expanded total registered stores to 24 (23 German region / storefront stores, 1 global).
 ## [1.0.0] - 2026-10-31
 
 ### Added
