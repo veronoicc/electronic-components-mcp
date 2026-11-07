@@ -42,18 +42,17 @@ async function runLiveSmoke() {
 
   // 2. Test multi-region search via SearchService
   console.log('\n--- Step 2: Testing SearchService region routing ---');
-  // Default: global only
-  const globalResults = await searchService.search({ query: 'esp32', limit: 2 });
-  console.log(`Global search (default): ${globalResults.length} items (shops: ${Array.from(new Set(globalResults.map((i) => i.shopId))).join(', ')})`);
+  // Default: all registered shops
+  const defaultResults = await searchService.search({ query: 'esp32', limit: 2 });
+  console.log(`Default search (all shops): ${defaultResults.length} items (shops: ${Array.from(new Set(defaultResults.map((i) => i.shopId))).join(', ')})`);
 
   // German only: ['de']
   const deResults = await searchService.search({ query: 'esp32', countries: ['de'], limit: 2 });
   console.log(`German search (['de']): ${deResults.length} items (shops: ${Array.from(new Set(deResults.map((i) => i.shopId))).join(', ')})`);
 
-  // Both: ['de', 'global']
-  const allResults = await searchService.search({ query: 'esp32', countries: ['de', 'global'], limit: 2 });
-  console.log(`All search (['de', 'global']): ${allResults.length} items (shops: ${Array.from(new Set(allResults.map((i) => i.shopId))).join(', ')})`);
-
+  // Global only: ['global']
+  const globalResults = await searchService.search({ query: 'esp32', countries: ['global'], limit: 2 });
+  console.log(`Global search (['global']): ${globalResults.length} items (shops: ${Array.from(new Set(globalResults.map((i) => i.shopId))).join(', ')})`);
   // 3. Test get_component_by_slug
   console.log('\n--- Step 3: Testing get_component_by_slug ---');
   for (const item of retrievedItems.slice(0, 4)) {

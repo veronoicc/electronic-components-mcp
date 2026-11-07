@@ -6,15 +6,23 @@ import type { ComponentItem, SearchOptions } from '../src/types/component.js';
 import type { ShippingCalculation, ShopAdapter, ShopMetadata } from '../src/types/shop.js';
 
 describe('ShopRegistry', () => {
-  it('implements default country rule: empty or undefined returns global only', () => {
+  it('implements default country rule: empty or undefined returns all registered shops', () => {
     const registry = new ShopRegistry();
     registerAllShops(registry);
 
     const defaultShops = registry.getShopsForCountries();
-    expect(defaultShops.map((s) => s.metadata.id)).toEqual(['aliexpress']);
+    expect(defaultShops.length).toBe(24);
 
     const emptyShops = registry.getShopsForCountries([]);
-    expect(emptyShops.map((s) => s.metadata.id)).toEqual(['aliexpress']);
+    expect(emptyShops.length).toBe(24);
+  });
+
+  it('filters global stores when ["global"] is specified', () => {
+    const registry = new ShopRegistry();
+    registerAllShops(registry);
+
+    const globalShops = registry.getShopsForCountries(['global']);
+    expect(globalShops.map((s) => s.metadata.id)).toEqual(['aliexpress']);
   });
 
   it('filters German stores when ["de"] is specified', () => {

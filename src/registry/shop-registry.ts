@@ -26,19 +26,19 @@ export class ShopRegistry {
 
   /**
    * Filters shops based on country selection:
-   * - No countries provided or empty array: Returns GLOBAL sellers only (e.g. AliExpress).
+   * - No countries provided or empty array: Returns ALL registered shops (German + global).
    * - ['de']: Returns German sellers only.
+   * - ['global']: Returns global sellers only.
    * - ['de', 'global']: Returns both German and global sellers.
-   * - Case-insensitive matching against shop region, countryCode, and supportedCountries.
+   * - Case-insensitive matching against shop region and countryCode.
    */
   getShopsForCountries(countries?: string[]): ShopAdapter[] {
     const all = this.getAllShops();
 
-    // Default rule: If no countries or empty array, return global sellers only
+    // Default rule: If no countries or empty array, return all registered stores
     if (!countries || countries.length === 0) {
-      return all.filter((s) => s.metadata.region.toLowerCase() === 'global');
+      return all;
     }
-
     const normalized = new Set(countries.map((c) => c.trim().toLowerCase()));
 
     return all.filter((shop) => {

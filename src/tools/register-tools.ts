@@ -8,7 +8,7 @@ import { searchService } from '../services/search-service.js';
 export function registerTools(server: McpServer): void {
   server.tool(
     'search_components',
-    'Search electronic components across registered online stores by keyword or part name',
+    'Search electronic components across registered online stores (German retailers like BerryBase, Reichelt, Conrad, Mouser, etc., and global stores like AliExpress) by keyword or part name. Default searches all stores.',
     {
       query: z
         .string()
@@ -16,7 +16,7 @@ export function registerTools(server: McpServer): void {
       countries: z
         .array(z.string())
         .optional()
-        .describe("Country/region codes, e.g. ['de'], ['global'], ['de', 'global']. Default: global only"),
+        .describe("Optional country/region filter, e.g. ['de'] for German stores only, ['global'] for overseas/global stores only. Default: all registered stores"),
       limit: z
         .number()
         .int()
@@ -71,7 +71,7 @@ export function registerTools(server: McpServer): void {
 
   server.tool(
     'search_components_by_type',
-    'Search electronic components by structured component category and optional ratings/specs',
+    'Search electronic components by structured component category and optional ratings/specs across registered online stores. Default searches all stores.',
     {
       type: z
         .enum(COMPONENT_CATEGORIES)
@@ -83,7 +83,7 @@ export function registerTools(server: McpServer): void {
       countries: z
         .array(z.string())
         .optional()
-        .describe("Country/region codes, e.g. ['de'], ['global']. Default: global only"),
+        .describe("Optional country/region filter, e.g. ['de'] for German stores only, ['global'] for overseas/global stores only. Default: all registered stores"),
       limit: z.number().int().min(1).max(50).optional().default(10),
       min_price: z.number().optional().describe('Minimum price in EUR'),
       max_price: z.number().optional().describe('Maximum price in EUR'),

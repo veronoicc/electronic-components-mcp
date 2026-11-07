@@ -1,6 +1,6 @@
 {
   "name": "@veronoicc/electronic-components-mcp",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Model Context Protocol (MCP) server for electronic components search, store comparisons, and multi-store cart management",
   "type": "module",
   "license": "MIT",

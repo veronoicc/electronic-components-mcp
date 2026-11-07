@@ -40,9 +40,9 @@ Model Context Protocol (MCP) server for electronic components. Search components
   - Choose between available carriers per shop: DHL Paket, UPS Standard, UPS Express Saver, DPD, GLS, Deutsche Post Warensendung, etc.
 - **Anti-Bot Resilience**: Uses `impit` with real Chrome TLS fingerprinting (JA4) and HTTP/2 emulation, falling back gracefully to standard fetch.
 - **Country / Region Routing**:
-  - Default (`undefined` or `[]`): Global stores only (`AliExpress`).
-  - `['de']`: German stores only (`BerryBase`, `Roboter-Bausatz`, `Eckstein`, `Watterott`, `Antratek`, `Botland`).
-  - `['de', 'global']`: All stores.
+  - Default (`undefined` or `[]`): All registered stores (German retailers and global stores).
+  - `['de']`: German stores only.
+  - `['global']`: Global/overseas stores only (`AliExpress`).
   - Extensible: add new country adapters without touching service or tool logic.
 - **Component Category Search**:
   - Standard categories (`capacitor`, `resistor`, `inductor`, `diode`, `transistor`, `ic`, `microcontroller`, `sensor`, `relay`, `display`, `power_supply`, `motor_driver`, `connector`).
